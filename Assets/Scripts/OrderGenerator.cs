@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class OrderGenerator : MonoBehaviour
 {
-    [Header("Masas / Conos")]
-    public Ingredientes[] masas;
+    [Header("Recipientes")]
+    public Ingredientes[] recipientes;
 
     [Header("Helados")]
     public Ingredientes[] helados;
@@ -11,13 +11,13 @@ public class OrderGenerator : MonoBehaviour
     [Header("Toppings")]
     public Ingredientes[] toppings;
 
-    [Header("Renderers que muestran la orden")]
-    public SpriteRenderer masaRenderer;
+    [Header("Renderers que muestran el pedido")]
+    public SpriteRenderer recipienteRenderer;
     public SpriteRenderer heladoRenderer;
     public SpriteRenderer toppingRenderer;
 
     // IDs que definirá la orden generada
-    [HideInInspector] public int masaID;
+    [HideInInspector] public int recipienteID;
     [HideInInspector] public int heladoID;
     [HideInInspector] public int toppingID;
 
@@ -28,10 +28,10 @@ public class OrderGenerator : MonoBehaviour
 
     public void GenerarOrden()
     {
-        // MASA
-        Ingredientes masa = masas[Random.Range(0, masas.Length)];
-        masaRenderer.sprite = masa.sprite;
-        masaID = masa.id;
+        // RECIPIENTE
+        Ingredientes recipiente = recipientes[Random.Range(0, recipientes.Length)];
+        recipienteRenderer.sprite = recipiente.sprite;
+        recipienteID = recipiente.id;
 
         // HELADO
         Ingredientes helado = helados[Random.Range(0, helados.Length)];
@@ -43,6 +43,6 @@ public class OrderGenerator : MonoBehaviour
         toppingRenderer.sprite = topping.sprite;
         toppingID = topping.id;
 
-        Debug.Log("Orden generada -> Masa: " + masaID + " | Helado: " + heladoID + " | Topping: " + toppingID);
+        Debug.Log("Orden generada -> Recipiente: " + recipienteID + " | Helado: " + heladoID + " | Topping: " + toppingID);
     }
 }

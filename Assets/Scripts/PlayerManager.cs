@@ -6,12 +6,12 @@ public class PlayerManager : MonoBehaviour
     public OrderGenerator orderGenerator;
 
     // Renderers donde se muestra lo que el jugador arma
-    public SpriteRenderer masaRendererJugador;
+    public SpriteRenderer recipienteRendererJugador;
     public SpriteRenderer heladoRendererJugador;
     public SpriteRenderer toppingRendererJugador;
 
     // IDs elegidos por el jugador
-    private int jugadorMasaID = -1;
+    private int jugadorRecipienteID = -1;
     private int jugadorHeladoID = -1;
     private int jugadorToppingID = -1;
 
@@ -19,11 +19,11 @@ public class PlayerManager : MonoBehaviour
     //  MÉTODOS PARA ELEGIR OPCIONES
     // ===========================
 
-    public void ElegirMasa(Ingredientes masa)
+    public void ElegirRecipiente(Ingredientes recipiente)
     {
-        masaRendererJugador.sprite = masa.sprite;
-        jugadorMasaID = masa.id;
-        Debug.Log("Jugador eligió masa ID: " + jugadorMasaID);
+        recipienteRendererJugador.sprite = recipiente.sprite;
+        jugadorRecipienteID = recipiente.id;
+        Debug.Log("Jugador eligió recipiente ID: " + jugadorRecipienteID);
     }
 
     public void ElegirHelado(Ingredientes helado)
@@ -46,25 +46,25 @@ public class PlayerManager : MonoBehaviour
 
     public void ComprobarOrden()
     {
-        if (jugadorMasaID == -1 || jugadorHeladoID == -1 || jugadorToppingID == -1)
+        if (jugadorRecipienteID == -1 || jugadorHeladoID == -1 || jugadorToppingID == -1)
         {
             Debug.Log("El jugador no ha terminado su pedido.");
             return;
         }
 
-        bool masaOK = jugadorMasaID == orderGenerator.masaID;
+        bool recipienteOK = jugadorRecipienteID == orderGenerator.recipienteID;
         bool heladoOK = jugadorHeladoID == orderGenerator.heladoID;
         bool toppingOK = jugadorToppingID == orderGenerator.toppingID;
 
-        if (masaOK && heladoOK && toppingOK)
+        if (recipienteOK && heladoOK && toppingOK)
         {
             Debug.Log("✔️ ORDEN CORRECTA");
         }
         else
         {
             Debug.Log("❌ ORDEN INCORRECTA");
-            Debug.Log("Jugador: " + jugadorMasaID + ", " + jugadorHeladoID + ", " + jugadorToppingID);
-            Debug.Log("Orden:   " + orderGenerator.masaID + ", " + orderGenerator.heladoID + ", " + orderGenerator.toppingID);
+            Debug.Log("Jugador: " + jugadorRecipienteID + ", " + jugadorHeladoID + ", " + jugadorToppingID);
+            Debug.Log("Orden:   " + orderGenerator.recipienteID + ", " + orderGenerator.heladoID + ", " + orderGenerator.toppingID);
         }
     }
 }
