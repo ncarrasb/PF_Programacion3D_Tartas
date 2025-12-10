@@ -11,15 +11,20 @@ public class OrderGenerator : MonoBehaviour
     [Header("Toppings")]
     public Ingredientes[] toppings;
 
+    [Header("Sabores")]
+    public Ingredientes[] sabores;
+
     [Header("Renderers que muestran el pedido")]
     public SpriteRenderer recipienteRenderer;
     public SpriteRenderer heladoRenderer;
     public SpriteRenderer toppingRenderer;
+    public SpriteRenderer saboresRenderer;
 
     // IDs que definirá la orden generada
     [HideInInspector] public int recipienteID;
     [HideInInspector] public int heladoID;
     [HideInInspector] public int toppingID;
+    [HideInInspector] public int saboresID;
 
     void Start()
     {
@@ -38,10 +43,16 @@ public class OrderGenerator : MonoBehaviour
         heladoRenderer.sprite = helado.sprite;
         heladoID = helado.id;
 
+        // SABORES
+        Ingredientes sabor = sabores[Random.Range(0, sabores.Length)];
+        saboresRenderer.sprite = sabor.sprite;
+        saboresID = sabor.id;
+
         // TOPPING
         Ingredientes topping = toppings[Random.Range(0, toppings.Length)];
         toppingRenderer.sprite = topping.sprite;
         toppingID = topping.id;
+
 
         Debug.Log("Orden generada -> Recipiente: " + recipienteID + " | Helado: " + heladoID + " | Topping: " + toppingID);
     }
