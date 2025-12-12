@@ -6,13 +6,16 @@ public class PlayerManager : MonoBehaviour
     public OrderGenerator orderGenerator;
 
     // Renderers donde se muestra lo que el jugador arma
+    [Header ("Renderers del pedido del jugador")]
     public SpriteRenderer recipienteRendererJugador;
     public SpriteRenderer heladoRendererJugador;
+    public SpriteRenderer saboresRendererJugador;
     public SpriteRenderer toppingRendererJugador;
 
     // IDs elegidos por el jugador
     private int jugadorRecipienteID = -1;
     private int jugadorHeladoID = -1;
+    private int jugadorSaboresID = -1;
     private int jugadorToppingID = -1;
 
     // ===========================
@@ -33,6 +36,12 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("Jugador eligió helado ID: " + jugadorHeladoID);
     }
 
+    public void ElegirSabor(Ingredientes sabor)
+    {
+        saboresRendererJugador.sprite= sabor.sprite;
+        jugadorSaboresID = sabor.id;
+    }
+
     public void ElegirTopping(Ingredientes topping)
     {
         toppingRendererJugador.sprite = topping.sprite;
@@ -46,7 +55,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ComprobarOrden()
     {
-        if (jugadorRecipienteID == -1 || jugadorHeladoID == -1 || jugadorToppingID == -1)
+        if (jugadorRecipienteID == -1 || jugadorHeladoID == -1 || jugadorSaboresID == -1 || jugadorToppingID == -1)
         {
             Debug.Log("El jugador no ha terminado su pedido.");
             return;
@@ -54,6 +63,7 @@ public class PlayerManager : MonoBehaviour
 
         bool recipienteOK = jugadorRecipienteID == orderGenerator.recipienteID;
         bool heladoOK = jugadorHeladoID == orderGenerator.heladoID;
+        bool saboresOK = jugadorSaboresID == orderGenerator.saboresID;
         bool toppingOK = jugadorToppingID == orderGenerator.toppingID;
 
         if (recipienteOK && heladoOK && toppingOK)

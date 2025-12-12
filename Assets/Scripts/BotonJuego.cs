@@ -27,6 +27,8 @@ public class BotonJuego : MonoBehaviour
             playerManager.ElegirRecipiente(ingrediente);
         else if (ingrediente.tipo == "helado")
             playerManager.ElegirHelado(ingrediente);
+        else if (ingrediente.tipo == "sabor")
+            playerManager.ElegirSabor(ingrediente);
         else if (ingrediente.tipo == "topping")
             playerManager.ElegirTopping(ingrediente);
     }
