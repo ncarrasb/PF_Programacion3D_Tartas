@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7621430cb67b10e4f9fb95a356aa3873
+guid: 115a7fd95dfb6584d88ce4a1b5a78411
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 566631994346257862
-    second: Sirope mora copia_0
+      213: 9007649844042201555
+    second: cono+soporte_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,9 +49,9 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.50431496, y: 0.111650504}
-  spritePixelsToUnits: 400
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sirope mora copia_0
+      name: cono+soporte_0
       rect:
         serializedVersion: 2
-        x: 434
-        y: 153
-        width: 411
-        height: 974
+        x: 578
+        y: 545
+        width: 124
+        height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6cd3165fbc41dd700800000000000000
-      internalID: 566631994346257862
+      spriteID: 3d9fc3ffec9910d70800000000000000
+      internalID: 9007649844042201555
       vertices: []
       indices: 
       edges: []
@@ -126,7 +126,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sirope mora copia_0: 566631994346257862
+      cono+soporte_0: 9007649844042201555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
