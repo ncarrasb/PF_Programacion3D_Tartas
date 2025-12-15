@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d1cfcf0d2244db94bab3fbe6b18e078e
+guid: 9827b7fa53dbfe940a8b60aedfc7a285
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1245048523558527452
-    second: S_5_0
+      213: -685514915789195477
+    second: bote fresas copia_0
+  - first:
+      213: 5153944988438335842
+    second: bote fresas copia_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: S_5_0
+      name: bote fresas copia_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 29
-        width: 122
-        height: 77
+        x: 250
+        y: 37
+        width: 682
+        height: 940
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd1a4de190d474110800000000000000
-      internalID: 1245048523558527452
+      spriteID: b27372ce0df8c76f0800000000000000
+      internalID: -685514915789195477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bote fresas copia_1
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 0
+        width: 75
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26195c309ad768740800000000000000
+      internalID: 5153944988438335842
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      S_5_0: 1245048523558527452
+      bote fresas copia_0: -685514915789195477
+      bote fresas copia_1: 5153944988438335842
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

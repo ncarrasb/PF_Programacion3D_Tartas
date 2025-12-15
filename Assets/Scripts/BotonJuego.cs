@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class BotonJuego : MonoBehaviour
 {
-    [Header("Configuración del Botón")]//sexooo
+    [Header("Configuración del Botón")]
     public Ingredientes ingrediente;
     public PlayerManager playerManager;
 
