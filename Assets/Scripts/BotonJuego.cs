@@ -23,15 +23,22 @@ public class BotonJuego : MonoBehaviour
     void OnMouseDown()
     {
         transform.localScale = Vector3.one * 0.9f;
-
-        if (ingrediente.tipo == "Recipiente")
-            playerManager.ElegirRecipiente(ingrediente);
-        else if (ingrediente.tipo == "Helado")
-            playerManager.ElegirHelado(ingrediente);
-        else if (ingrediente.tipo == "Sabor")
-            playerManager.ElegirSabor(ingrediente);
-        else if (ingrediente.tipo == "Topping")
-            playerManager.ElegirTopping(ingrediente);
+        if (CompareTag("NextHelado"))
+        {
+            Debug.Log("Comprobando pedido...");
+            playerManager.ComprobarOrden();
+        }
+        else
+        {
+            if (ingrediente.tipo == "Recipiente")
+                playerManager.ElegirRecipiente(ingrediente);
+            else if (ingrediente.tipo == "Helado")
+                playerManager.ElegirHelado(ingrediente);
+            else if (ingrediente.tipo == "Sabor")
+                playerManager.ElegirSabor(ingrediente);
+            else if (ingrediente.tipo == "Topping")
+                playerManager.ElegirTopping(ingrediente);
+        }
     }
 
     void OnMouseUp()
