@@ -66,15 +66,15 @@ public class PlayerManager : MonoBehaviour
         bool saboresOK = jugadorSaboresID == orderGenerator.saboresID;
         bool toppingOK = jugadorToppingID == orderGenerator.toppingID;
 
-        if (recipienteOK && heladoOK && toppingOK)
+        if (recipienteOK && heladoOK && saboresOK && toppingOK)
         {
             Debug.Log("✔️ ORDEN CORRECTA");
         }
         else
         {
             Debug.Log("❌ ORDEN INCORRECTA");
-            Debug.Log("Jugador: " + jugadorRecipienteID + ", " + jugadorHeladoID + ", " + jugadorToppingID);
-            Debug.Log("Orden:   " + orderGenerator.recipienteID + ", " + orderGenerator.heladoID + ", " + orderGenerator.toppingID);
+            Debug.Log("Jugador: " + jugadorRecipienteID + ", " + jugadorHeladoID + ", " + jugadorSaboresID + ", " + jugadorToppingID);
+            Debug.Log("Orden:   " + orderGenerator.recipienteID + ", " + orderGenerator.heladoID + ", " + orderGenerator.saboresID + ", " + orderGenerator.toppingID);
         }
     }
 }

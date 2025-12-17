@@ -54,6 +54,6 @@ public class OrderGenerator : MonoBehaviour
         toppingID = topping.id;
 
 
-        Debug.Log("Orden generada -> Recipiente: " + recipienteID + " | Helado: " + heladoID + " | Topping: " + toppingID);
+        Debug.Log("Orden generada -> Recipiente: " + recipienteID + " | Helado: " + heladoID + " | Sirope: " + saboresID + " | Topping: " + toppingID);
     }
 }
