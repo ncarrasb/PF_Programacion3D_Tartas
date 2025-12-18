@@ -7,6 +7,10 @@ public class BotonJuego : MonoBehaviour
     public Ingredientes ingrediente;
     public PlayerManager playerManager;
 
+
+    public AudioClip sonidoClick;
+    private AudioSource audioSource;
+
     private SpriteRenderer spriteRenderer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,6 +18,8 @@ public class BotonJuego : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerManager = FindFirstObjectByType<PlayerManager>();
+        audioSource = playerManager.GetComponent<AudioSource>();
+
         /*
         if (spriteRenderer && ingrediente.sprite)
             spriteRenderer.sprite = ingrediente.sprite;
@@ -23,6 +29,12 @@ public class BotonJuego : MonoBehaviour
     void OnMouseDown()
     {
         transform.localScale = Vector3.one * 0.9f;
+
+        
+        if (sonidoClick != null && audioSource != null)
+            audioSource.PlayOneShot(sonidoClick);
+
+     
         if (CompareTag("NextHelado"))
         {
             Debug.Log("Comprobando pedido...");
