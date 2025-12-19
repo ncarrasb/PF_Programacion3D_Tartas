@@ -12,6 +12,7 @@ public class BotonJuego : MonoBehaviour
     private AudioSource audioSource;
 
     private SpriteRenderer spriteRenderer;
+    private Vector3 escalaOriginal;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +20,7 @@ public class BotonJuego : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerManager = FindFirstObjectByType<PlayerManager>();
         audioSource = playerManager.GetComponent<AudioSource>();
+        escalaOriginal = transform.localScale;
 
         /*
         if (spriteRenderer && ingrediente.sprite)
@@ -28,9 +30,9 @@ public class BotonJuego : MonoBehaviour
 
     void OnMouseDown()
     {
-        transform.localScale = Vector3.one * 0.9f;
+        transform.localScale = escalaOriginal * 0.9f;
 
-        
+
         if (sonidoClick != null && audioSource != null)
             audioSource.PlayOneShot(sonidoClick);
 
@@ -55,6 +57,6 @@ public class BotonJuego : MonoBehaviour
 
     void OnMouseUp()
     {
-        transform.localScale = Vector3.one;
+        transform.localScale = escalaOriginal;
     }
 }
