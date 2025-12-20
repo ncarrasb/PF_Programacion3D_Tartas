@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class NivelTimerBarraColor : MonoBehaviour
+public class Contador : MonoBehaviour
 {
     [Header("Configuración")]
     public float tiempoInicial = 30f;
@@ -23,6 +24,8 @@ public class NivelTimerBarraColor : MonoBehaviour
         barraTiempo.value = tiempoInicial;
 
         cartelDiaTerminado.SetActive(false);
+
+        EmpezarNivel();
     }
 
     void Update()
@@ -37,10 +40,7 @@ public class NivelTimerBarraColor : MonoBehaviour
                 TerminarDia();
             }
 
-            // Actualizar barra
             barraTiempo.value = tiempoRestante;
-
-            // Cambiar color según tiempo restante
             ActualizarColorBarra();
         }
     }

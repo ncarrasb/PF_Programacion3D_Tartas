@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BotonTutorial : MonoBehaviour
 {
-    [Header("Sonido (opcional)")]
+    [Header("Sonido")]
     public AudioClip sonidoClick;
     private AudioSource audioSource;
 
@@ -27,7 +28,14 @@ public class BotonTutorial : MonoBehaviour
         if (sonidoClick != null && audioSource != null)
             audioSource.PlayOneShot(sonidoClick);
 
-        CambiarObjetos();
+        if (CompareTag("Empezar"))
+        {
+            SceneManager.LoadScene("Level_01");
+        }
+        else
+        {
+            CambiarObjetos();
+        }
     }
 
     void OnMouseUp()
