@@ -18,7 +18,7 @@ public class BotonTutorial : MonoBehaviour
     void Start()
     {
         escalaOriginal = transform.localScale;
-        audioSource = FindFirstObjectByType<AudioSource>();
+        audioSource = GetComponent<AudioSource>(); // 🔑 CLAVE
     }
 
     void OnMouseDown()

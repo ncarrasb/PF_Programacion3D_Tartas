@@ -2,8 +2,13 @@
 
 public class PlayerManager : MonoBehaviour
 {
+
     // Referencia al OrderGenerator
     public OrderGenerator orderGenerator;
+
+    [Header("Sonidos")]
+    public AudioClip sonidoBasura;
+    private AudioSource audioSource;
 
     // Renderers donde se muestra lo que el jugador arma
     [Header ("Renderers del pedido del jugador")]
@@ -17,6 +22,12 @@ public class PlayerManager : MonoBehaviour
     private int jugadorHeladoID = -1;
     private int jugadorSaboresID = -1;
     private int jugadorToppingID = -1;
+
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // ===========================
     //  MÉTODOS PARA ELEGIR OPCIONES
@@ -49,6 +60,8 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("Jugador eligió topping ID: " + jugadorToppingID);
     }
 
+
+
     // ===========================
     //  COMPROBAR ORDEN
     // ===========================
@@ -59,6 +72,8 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log("El jugador no ha terminado su pedido.");
             return;
+
+
         }
 
         bool recipienteOK = jugadorRecipienteID == orderGenerator.recipienteID;
@@ -69,12 +84,61 @@ public class PlayerManager : MonoBehaviour
         if (recipienteOK && heladoOK && saboresOK && toppingOK)
         {
             Debug.Log("✔️ ORDEN CORRECTA");
+
+            // El helado desaparece
+            ResetearHeladoJugador();
+
+            // Nuevo pedido
+            orderGenerator.GenerarOrden();
+
+
         }
         else
         {
             Debug.Log("❌ ORDEN INCORRECTA");
             Debug.Log("Jugador: " + jugadorRecipienteID + ", " + jugadorHeladoID + ", " + jugadorSaboresID + ", " + jugadorToppingID);
             Debug.Log("Orden:   " + orderGenerator.recipienteID + ", " + orderGenerator.heladoID + ", " + orderGenerator.saboresID + ", " + orderGenerator.toppingID);
+
+            // Se tira a la basura
+            TirarHeladoABasura();
+
         }
     }
+
+    // ===========================
+    //  RESETEAR HELADO DEL JUGADOR
+    // ===========================
+
+    public void ResetearHeladoJugador()
+    {
+        recipienteRendererJugador.sprite = null;
+        heladoRendererJugador.sprite = null;
+        saboresRendererJugador.sprite = null;
+        toppingRendererJugador.sprite = null;
+
+        jugadorRecipienteID = -1;
+        jugadorHeladoID = -1;
+        jugadorSaboresID = -1;
+        jugadorToppingID = -1;
+    }
+
+
+    // ===========================
+    //  TIRAR HELADO A LA BASURA
+    // ===========================
+
+    public void TirarHeladoABasura()
+    {
+        // Sonido de basura
+        if (sonidoBasura != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(sonidoBasura);
+        }
+
+        // Eliminar el helado actual
+        ResetearHeladoJugador();
+    }
+
+
+
 }

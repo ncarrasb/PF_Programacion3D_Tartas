@@ -36,11 +36,19 @@ public class BotonJuego : MonoBehaviour
         if (sonidoClick != null && audioSource != null)
             audioSource.PlayOneShot(sonidoClick);
 
-     
+        
+        if (CompareTag("Basura"))
+        {
+            playerManager.TirarHeladoABasura();
+            return;
+        }
+
+
         if (CompareTag("NextHelado"))
         {
             Debug.Log("Comprobando pedido...");
             playerManager.ComprobarOrden();
+            return;
         }
         else
         {
