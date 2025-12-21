@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class Contador : MonoBehaviour
 {
     [Header("Configuración")]
-    public float tiempoInicial = 30f;
+    public float tiempoInicial = 120f;
+    public float esperaResultados = 2.5f;
 
     [Header("Referencias UI")]
     public Slider barraTiempo;
@@ -54,6 +55,8 @@ public class Contador : MonoBehaviour
     {
         nivelIniciado = false;
         cartelDiaTerminado.SetActive(true);
+
+        StartCoroutine(CargarResultadosTrasEspera());
     }
 
     void ActualizarColorBarra()
@@ -72,5 +75,14 @@ public class Contador : MonoBehaviour
         {
             fillBar.color = Color.red;
         }
+    }
+
+    System.Collections.IEnumerator CargarResultadosTrasEspera()
+    {
+        yield return new WaitForSeconds(esperaResultados);
+
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene("PuntuaciónFinal");
     }
 }

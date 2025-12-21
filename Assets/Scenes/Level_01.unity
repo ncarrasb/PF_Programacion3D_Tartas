@@ -668,7 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b5476067489574ca38af4ce525b526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NivelTimerBarraColor
-  tiempoInicial: 10
+  tiempoInicial: 60
+  esperaResultados: 2.5
   barraTiempo: {fileID: 1870150984}
   fillBar: {fileID: 2031018716}
   cartelDiaTerminado: {fileID: 378213247}
@@ -1304,9 +1305,9 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 06f39a31768b1be4d9e49f5547c3f0d0, type: 3}
     id: 0
     tipo: Sabor
-  - nombre: S_1
+  - nombre: S_2
     sprite: {fileID: 21300000, guid: fbfd7ede631d33748975fca3e6c32194, type: 3}
-    id: 0
+    id: 1
     tipo: Sabor
   - nombre: S_3
     sprite: {fileID: 21300000, guid: 0bd669a15db6a994cae2b1b2aa8c5967, type: 3}
@@ -1741,6 +1742,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &433456905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 433456907}
+  - component: {fileID: 433456906}
+  m_Layer: 0
+  m_Name: SalirConBotonESC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &433456906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433456905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4af34f8a690b974a90d8c119b8dd929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SalirConESC
+--- !u!4 &433456907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433456905}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -172.49352, y: 208.18774, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &482017859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3486,7 +3531,7 @@ Transform:
   m_GameObject: {fileID: 1067146900}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.49136, y: -0.5273, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3540,10 +3585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4478,6 +4523,52 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1874592108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1874592109}
+  - component: {fileID: 1874592110}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1874592109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874592108}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1874592110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874592108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cf0d93d029ead458ae6219e8454ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  aciertos: 0
+  fallos: 0
 --- !u!1 &1952128679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5264,3 +5355,5 @@ SceneRoots:
   - {fileID: 373489684}
   - {fileID: 953750436}
   - {fileID: 1067146902}
+  - {fileID: 1874592109}
+  - {fileID: 433456907}

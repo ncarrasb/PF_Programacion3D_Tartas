@@ -85,6 +85,8 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log("✔️ ORDEN CORRECTA");
 
+            ScoreManager.Instance?.AddAcierto();
+
             // El helado desaparece
             ResetearHeladoJugador();
 
@@ -99,8 +101,12 @@ public class PlayerManager : MonoBehaviour
             Debug.Log("Jugador: " + jugadorRecipienteID + ", " + jugadorHeladoID + ", " + jugadorSaboresID + ", " + jugadorToppingID);
             Debug.Log("Orden:   " + orderGenerator.recipienteID + ", " + orderGenerator.heladoID + ", " + orderGenerator.saboresID + ", " + orderGenerator.toppingID);
 
+            ScoreManager.Instance?.AddFallo();
+
             // Se tira a la basura
             TirarHeladoABasura();
+
+            orderGenerator.GenerarOrden();
 
         }
     }
