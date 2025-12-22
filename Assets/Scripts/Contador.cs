@@ -11,7 +11,6 @@ public class Contador : MonoBehaviour
     [Header("Referencias UI")]
     public Slider barraTiempo;
     public Image fillBar;               // La parte de color de la barra
-    public GameObject cartelDiaTerminado;
 
     private float tiempoRestante;
     private bool nivelIniciado = false;
@@ -23,8 +22,6 @@ public class Contador : MonoBehaviour
         // Configurar barra
         barraTiempo.maxValue = tiempoInicial;
         barraTiempo.value = tiempoInicial;
-
-        cartelDiaTerminado.SetActive(false);
 
         EmpezarNivel();
     }
@@ -54,7 +51,6 @@ public class Contador : MonoBehaviour
     void TerminarDia()
     {
         nivelIniciado = false;
-        cartelDiaTerminado.SetActive(true);
 
         StartCoroutine(CargarResultadosTrasEspera());
     }
